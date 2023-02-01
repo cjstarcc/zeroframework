@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package user;
+option go_package="./user";
+
+message SCLoginReq {
+  string username = 1;
+  string password = 2;
+}
+
+message CSLoginResp {
+  int64 id = 1;
+}
+
+service User {
+  rpc Login(SCLoginReq) returns(CSLoginResp);
+}
